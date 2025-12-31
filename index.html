@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- this html file was created by https://file.gallery/src/cultivate.js -->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -58,6 +57,7 @@
         box-shadow:0px 0px 0px rgba(79, 143, 254, 0.5);
     }
 
+    .plantbed .item img,
     .plantbed .item img{
         max-width:100%;
         height:auto;
@@ -142,6 +142,23 @@
     .breadcrumb-line{
         white-space:nowrap;
     }
+
+    /* ---------- MOBILE FIX ---------- */
+    @media (max-width: 768px) {
+        main{
+            overflow-x:auto;
+            padding-left:2em;   /* restore left white space */
+            padding-right:1.5em; /* keep right padding consistent */
+        }
+
+        .plantbed{
+            left:0 !important;         /* override inline centering math */
+            width:max-content;
+            min-width:100%;
+            transform:scale(0.5);
+            transform-origin:top left;
+        }
+    }
   </style>
 </head>
 
@@ -149,12 +166,11 @@
   <main>
 
     <div class="plantbed" style="left: max(0px, calc(50% - 446.5px - 9em))">
-
       <div class="item" style="top: 88px; left: 300px">
         <h3><a href="_ _.md">_ _.md</a> (60B)</h3>
         <div class="md">
-          <h1>Double-thumb pan (⛶)</h1>
-          <h1>Swipe to navigate --➡</h1>
+          <h1>Double-thumb pan (⛶)<br></h1>
+          <h1>Swipe to navigate --➡ <br></h1>
         </div>
       </div>
 
@@ -195,14 +211,13 @@
       <div class="item" style="top: 465px; left: 4px">
         <h3><a href="about.md">about.md</a> (311B)</h3>
         <div class="md">
-          <p><a href="https://reidsurmeier.design/">Reid Surmeier</a><br>
-          ⁂ Random photos, essays, links, art etc..</p>
-          <p>
-            <a href="https://www.are.na/reid-surmeier/channels">&lt;/Are.na&gt;</a><br>
-            <a href="https://www.instagram.com/reidsurmeier/">Instagram</a><br>
-            <a href="https://nowifi.us.com/">Nowifi</a><br>
-            <a href="mailto:rsurmeie@risd.edu">Email</a>
-          </p>
+          <p><a href="https://reidsurmeier.design/">Reid Surmeier</a> <br>
+          ⁂ Random photos, essays, links, art etc.. <br></p>
+          <p>Other links<br>
+          <a href="https://www.are.na/reid-surmeier/channels">&lt;/Are.na&gt;</a><br>
+          <a href="https://www.instagram.com/reidsurmeier/">Instagram</a><br>
+          <a href="https://nowifi.us.com/">Nowifi</a><br>
+          <a href="mailto:rsurmeie@risd.edu">Email</a><br></p>
         </div>
       </div>
 
@@ -238,7 +253,6 @@
       <div class="item" style="top: 1109px; left: 565px">
         <h3><a href="views/">views/</a> (2 items)</h3>
       </div>
-
     </div>
 
   </main>
