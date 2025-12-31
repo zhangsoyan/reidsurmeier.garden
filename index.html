@@ -116,8 +116,6 @@
         position:absolute;
         width:max-content;
         max-width:300px;
-        transition:all cubic-bezier(.27,0,.29,1) 0.2s;
-        box-shadow:0px 0px 0px rgba(79, 143, 254, 0.5);
       }
       .plantbed .item img{
         max-width:100%;
@@ -139,7 +137,7 @@
         left:auto !important;
         display:flex;
         flex-direction:column;
-        gap:14px;
+        gap:32px; /* ← requested spacing */
       }
 
       .plantbed .item{
@@ -154,7 +152,7 @@
         height:auto;
       }
 
-      /* ✅ MOBILE EXCLUSIONS */
+      /* hide technical folders on mobile */
       .it-src,
       .it-views{
         display:none !important;
@@ -191,27 +189,27 @@
         </div>
       </div>
 
-      <!-- 3) ▷Sketchbook/ -->
+      <!-- 3) Sketchbook -->
       <div class="item it-sketchbook" style="top: 722px; left: 714px">
         <h3><a href="▷Sketchbook/">▷Sketchbook/</a> (9 items)</h3>
       </div>
 
-      <!-- 4) ▷Essays/ -->
+      <!-- 4) Essays -->
       <div class="item it-essays" style="top: 618px; left: 712px">
         <h3><a href="▷Essays/">▷Essays/</a> (3 items)</h3>
       </div>
 
-      <!-- 5) ▷Painting Selections/ -->
+      <!-- 5) Painting Selections -->
       <div class="item it-painting" style="top: 532px; left: 711px">
         <h3><a href="▷Painting Selections/">▷Painting Selections/</a> (43 items)</h3>
       </div>
 
-      <!-- 6) Paris (2025)/ -->
+      <!-- 6) Paris -->
       <div class="item it-paris" style="top: 50px; left: 707px">
         <h3><a href="Paris (2025)/">Paris (2025)/</a> (49 items)</h3>
       </div>
 
-      <!-- 7) NYC (2024)/ -->
+      <!-- 7) NYC -->
       <div class="item it-nyc" style="top: 83px; left: 708px">
         <h3><a href="NYC (2024)/">NYC (2024)/</a> (32 items)</h3>
       </div>
@@ -232,18 +230,17 @@
         </a>
       </div>
 
-      <!-- kept on both -->
+      <!-- last updated -->
       <div class="item it-updated" style="top: 1005px; left: 1px">
         <h3>last updated</h3>
         <pre>2025-12-30</pre>
       </div>
 
-      <!-- hidden on mobile -->
+      <!-- desktop only -->
       <div class="item it-src" style="top: 1109px; left: 391px">
         <h3><a href="src/">src/</a> (2 items)</h3>
       </div>
 
-      <!-- hidden on mobile -->
       <div class="item it-views" style="top: 1109px; left: 565px">
         <h3><a href="views/">views/</a> (2 items)</h3>
       </div>
