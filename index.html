@@ -104,9 +104,9 @@
       margin-top:1em;
     }
 
-    /* =============================
+    /* -----------------------------
        DESKTOP: floating canvas
-       ============================= */
+       ----------------------------- */
     @media (min-width: 769px){
       .plantbed{
         width:0;
@@ -123,9 +123,9 @@
       }
     }
 
-    /* =============================
+    /* -----------------------------
        MOBILE: ordered vertical stack
-       ============================= */
+       ----------------------------- */
     @media (max-width: 768px){
       main{
         padding:1em;
@@ -137,7 +137,7 @@
         left:auto !important;
         display:flex;
         flex-direction:column;
-        gap:32px; /* base rhythm */
+        gap:32px; /* ← requested spacing */
       }
 
       .plantbed .item{
@@ -150,16 +150,6 @@
       .plantbed .item img{
         max-width:100%;
         height:auto;
-      }
-
-      /* strong separation between major sections */
-      .it-sketchbook,
-      .it-essays,
-      .it-painting,
-      .it-paris,
-      .it-nyc{
-        padding-top:50px;
-        padding-bottom:50px;
       }
 
       /* hide technical folders on mobile */
@@ -176,16 +166,16 @@
 
     <div class="plantbed" style="left: max(0px, calc(50% - 446.5px - 9em))">
 
-      <!-- fj09304u2.png -->
-      <div class="item it-fj" style="top:90px; left:0px">
+      <!-- 1) fj09304u2.png -->
+      <div class="item it-fj" style="top: 90px; left: 0px">
         <h3><a href="fj09304u2.png">fj09304u2.png</a> (136kB)</h3>
         <a href="fj09304u2.png">
           <img src="fj09304u2.png" alt="fj09304u2.png" width="284" height="320">
         </a>
       </div>
 
-      <!-- about.md -->
-      <div class="item it-about" style="top:465px; left:4px">
+      <!-- 2) about.md -->
+      <div class="item it-about" style="top: 465px; left: 4px">
         <h3><a href="about.md">about.md</a> (311B)</h3>
         <div class="md">
           <p><a href="https://reidsurmeier.design/">Reid Surmeier</a><br>
@@ -199,41 +189,41 @@
         </div>
       </div>
 
-      <!-- Sketchbook -->
-      <div class="item it-sketchbook" style="top:722px; left:714px">
+      <!-- 3) Sketchbook -->
+      <div class="item it-sketchbook" style="top: 722px; left: 714px">
         <h3><a href="▷Sketchbook/">▷Sketchbook/</a> (9 items)</h3>
       </div>
 
-      <!-- Essays -->
-      <div class="item it-essays" style="top:618px; left:712px">
+      <!-- 4) Essays -->
+      <div class="item it-essays" style="top: 618px; left: 712px">
         <h3><a href="▷Essays/">▷Essays/</a> (3 items)</h3>
       </div>
 
-      <!-- Painting Selections -->
-      <div class="item it-painting" style="top:532px; left:711px">
+      <!-- 5) Painting Selections -->
+      <div class="item it-painting" style="top: 532px; left: 711px">
         <h3><a href="▷Painting Selections/">▷Painting Selections/</a> (43 items)</h3>
       </div>
 
-      <!-- Paris -->
-      <div class="item it-paris" style="top:50px; left:707px">
+      <!-- 6) Paris -->
+      <div class="item it-paris" style="top: 50px; left: 707px">
         <h3><a href="Paris (2025)/">Paris (2025)/</a> (49 items)</h3>
       </div>
 
-      <!-- NYC -->
-      <div class="item it-nyc" style="top:83px; left:708px">
+      <!-- 7) NYC -->
+      <div class="item it-nyc" style="top: 83px; left: 708px">
         <h3><a href="NYC (2024)/">NYC (2024)/</a> (32 items)</h3>
       </div>
 
-      <!-- 94.png -->
-      <div class="item it-94" style="top:1090px; left:893px">
+      <!-- 8) 94.png -->
+      <div class="item it-94" style="top: 1090px; left: 893px">
         <h3><a href="94.png">94.png</a> (6.66kB)</h3>
         <a href="94.png">
           <img src="94.png" alt="94.png" width="72" height="55">
         </a>
       </div>
 
-      <!-- 83.png -->
-      <div class="item it-83" style="top:1099px; left:4px">
+      <!-- 9) 83.png -->
+      <div class="item it-83" style="top: 1099px; left: 4px">
         <h3><a href="83.png">83.png</a> (52.2kB)</h3>
         <a href="83.png">
           <img src="83.png" alt="83.png" width="325" height="99">
@@ -241,17 +231,17 @@
       </div>
 
       <!-- last updated -->
-      <div class="item it-updated" style="top:1005px; left:1px">
+      <div class="item it-updated" style="top: 1005px; left: 1px">
         <h3>last updated</h3>
         <pre>2025-12-30</pre>
       </div>
 
       <!-- desktop only -->
-      <div class="item it-src" style="top:1109px; left:391px">
+      <div class="item it-src" style="top: 1109px; left: 391px">
         <h3><a href="src/">src/</a> (2 items)</h3>
       </div>
 
-      <div class="item it-views" style="top:1109px; left:565px">
+      <div class="item it-views" style="top: 1109px; left: 565px">
         <h3><a href="views/">views/</a> (2 items)</h3>
       </div>
 
