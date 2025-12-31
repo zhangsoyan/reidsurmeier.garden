@@ -25,16 +25,11 @@
       box-sizing: border-box;
       padding: 1.5em;
     }
-
-    ::selection{
-      background-color:rgba(79, 143, 254, 0.5);
-    }
-
     .item {
       display: inline-block;
-      padding: 0em 0.25em;
+      padding: 0em 1em;
       margin: 1em 0;
-      border: 1px dotted rgba(79, 143, 254, 0.5);
+      border: 1px solid rgba(0,0,0,.1);
     }
     .item img, .item video {
       width: auto; height: auto;
@@ -56,38 +51,18 @@
       font-family: inherit;
       white-space: pre-wrap;
     }
-
-    a{
-      color:rgb(84, 136, 226);
+    a {
+      color: #0000EE; /* edit me! */
     }
-    a:hover{
-      /* text-shadow:0 0 5px rgba(121, 148, 212, 0.4); */
-      color:rgb(127, 174, 255);
-    }
-
     .md h1, .md h2, .md h3, .md h4, .md h5, .md h6, .md p, .md pre {
       margin-top: 1em;
-    }
-
-    #back{
-      position:fixed;
-      top:1em;
-      left:1.5em;
-      padding:0em 0.25em;
-      margin:1em 0;
-      background-color:white;
-      z-index:999;
-    }
-
-    .breadcrumb-line{
-      white-space:nowrap;
     }
   </style>
 </head>
 
 <body>
   <main>
-    <div id="back"><h3><a href="..">back</a></h3></div>
+    <h3><a href="..">back</a></h3>
     <p>▷Painting Selections/</p>
     
     <div class="plantbed">
