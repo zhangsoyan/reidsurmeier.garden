@@ -1,73 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>reidsurmeier.Garden</title>
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <meta name="author" content="Reid Surmeier">
-  <meta name="viewport" content="width=device-width, initial-scale=0.8">
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="author" content="Reid Surmeier" />
+
   <style>
     html,
     body{
-        margin:0;
-        text-size-adjust:none;
-        font-size:14px;
-        font-family:Arial, Helvetica, sans-serif;
-        -webkit-text-size-adjust:100%;
+      margin:0;
+      text-size-adjust:none;
+      font-size:14px;
+      font-family:Arial, Helvetica, sans-serif;
+      -webkit-text-size-adjust:100%;
     }
 
     main{
-        box-sizing:border-box;
-        padding:1.5em;
+      box-sizing:border-box;
+      padding:1.5em;
     }
 
     ::selection{
-        background-color:rgba(79, 143, 254, 0.5);
+      background-color:rgba(79, 143, 254, 0.5);
     }
 
     .item{
-        display:inline-block;
-        padding:0em 0.25em;
-        margin:1em 0;
-        border:1px dotted rgba(79, 143, 254, 0.5);
+      display:inline-block;
+      padding:0em 0.25em;
+      margin:1em 0;
+      border:1px dotted rgba(79, 143, 254, 0.5);
+      background-color:white;
     }
 
     .item img,
     .item video{
-        width:auto;
-        height:auto;
-        max-width:28em;
-        max-height:26em;
-    }
-
-    .plantbed{
-        width:0;
-        position:relative;
-    }
-
-    .plantbed .item{
-        position:absolute;
-        width:max-content;
-        max-width:300px;
-        background-color:white;
-        transition:all cubic-bezier(.27,0,.29,1) 0.2s;
-        box-shadow:0px 0px 0px rgba(79, 143, 254, 0.5);
-    }
-
-    .plantbed .item img{
-        max-width:100%;
-        height:auto;
+      width:auto;
+      height:auto;
+      max-width:28em;
+      max-height:26em;
     }
 
     .item audio{
-        max-width:18em;
-        height:3em;
+      max-width:18em;
+      height:3em;
     }
 
     .md{
-        max-width:300px;
+      max-width:300px;
     }
 
     h1,
@@ -77,14 +59,10 @@
     h5,
     h6,
     .caption{
-        font-size:1em;
-        font-weight:normal;
-        color:rgba(79, 143, 254, 0.5);
-        max-width:26em;
-    }
-
-    .caption{
-        display:flex;
+      font-size:1em;
+      font-weight:normal;
+      color:rgba(79, 143, 254, 0.5);
+      max-width:26em;
     }
 
     h1,
@@ -99,21 +77,20 @@
     li,
     pre,
     code{
-        margin:0;
+      margin:0;
     }
 
     pre{
-        font-family:inherit;
-        white-space:pre-line;
-        max-width:28em;
+      font-family:inherit;
+      white-space:pre-line;
+      max-width:28em;
     }
 
     a{
-        color:rgb(84, 136, 226);
+      color:rgb(84, 136, 226);
     }
-
     a:hover{
-        color:rgb(127, 174, 255);
+      color:rgb(127, 174, 255);
     }
 
     .md h1,
@@ -124,44 +101,63 @@
     .md h6,
     .md p,
     .md pre{
-        margin-top:1em;
+      margin-top:1em;
     }
 
-    #back{
-        position:fixed;
-        top:1em;
-        left:1.5em;
-        padding:0em 0.25em;
-        margin:1em 0;
-        background-color:white;
-        z-index:999;
-    }
-
-    .breadcrumb-line{
-        white-space:nowrap;
-    }
-
-    /* MOBILE: ordered single-column canvas */
-    @media (max-width: 700px) {
+    /* -----------------------------
+       DESKTOP: floating canvas
+       ----------------------------- */
+    @media (min-width: 769px){
       .plantbed{
-        width: 100%;
-        position: relative;
-        left: 0 !important;         /* overrides inline left on mobile */
-        padding: 1em 0 6em;
-        box-sizing: border-box;
-        min-height: 140vh;
+        width:0;
+        position:relative;
+      }
+      .plantbed .item{
+        position:absolute;
+        width:max-content;
+        max-width:300px;
+        transition:all cubic-bezier(.27,0,.29,1) 0.2s;
+        box-shadow:0px 0px 0px rgba(79, 143, 254, 0.5);
+      }
+      .plantbed .item img{
+        max-width:100%;
+        height:auto;
+      }
+    }
+
+    /* -----------------------------
+       MOBILE: ordered vertical stack
+       ----------------------------- */
+    @media (max-width: 768px){
+      main{
+        padding:1em;
+      }
+
+      .plantbed{
+        width:auto;
+        position:static;
+        left:auto !important;
+        display:flex;
+        flex-direction:column;
+        gap:14px;
       }
 
       .plantbed .item{
-        position: absolute;
-        left: 0px !important;       /* keep everything aligned in one column */
-        width: min(86vw, 340px);
-        max-width: 86vw;
+        position:static !important;
+        width:auto;
+        max-width:100%;
+        margin:0;
       }
 
       .plantbed .item img{
         max-width:100%;
         height:auto;
+      }
+
+      /* ✅ MOBILE EXCLUSIONS */
+      .it-src,
+      .it-views{
+        display:none !important;
       }
     }
   </style>
@@ -173,7 +169,7 @@
     <div class="plantbed" style="left: max(0px, calc(50% - 446.5px - 9em))">
 
       <!-- 1) fj09304u2.png -->
-      <div class="item" style="top: 40px; left: 0px">
+      <div class="item it-fj" style="top: 90px; left: 0px">
         <h3><a href="fj09304u2.png">fj09304u2.png</a> (136kB)</h3>
         <a href="fj09304u2.png">
           <img src="fj09304u2.png" alt="fj09304u2.png" width="284" height="320">
@@ -181,7 +177,7 @@
       </div>
 
       <!-- 2) about.md -->
-      <div class="item" style="top: 430px; left: 0px">
+      <div class="item it-about" style="top: 465px; left: 4px">
         <h3><a href="about.md">about.md</a> (311B)</h3>
         <div class="md">
           <p><a href="https://reidsurmeier.design/">Reid Surmeier</a><br>
@@ -196,32 +192,32 @@
       </div>
 
       <!-- 3) ▷Sketchbook/ -->
-      <div class="item" style="top: 650px; left: 0px">
+      <div class="item it-sketchbook" style="top: 722px; left: 714px">
         <h3><a href="▷Sketchbook/">▷Sketchbook/</a> (9 items)</h3>
       </div>
 
       <!-- 4) ▷Essays/ -->
-      <div class="item" style="top: 740px; left: 0px">
+      <div class="item it-essays" style="top: 618px; left: 712px">
         <h3><a href="▷Essays/">▷Essays/</a> (3 items)</h3>
       </div>
 
       <!-- 5) ▷Painting Selections/ -->
-      <div class="item" style="top: 830px; left: 0px">
+      <div class="item it-painting" style="top: 532px; left: 711px">
         <h3><a href="▷Painting Selections/">▷Painting Selections/</a> (43 items)</h3>
       </div>
 
       <!-- 6) Paris (2025)/ -->
-      <div class="item" style="top: 920px; left: 0px">
+      <div class="item it-paris" style="top: 50px; left: 707px">
         <h3><a href="Paris (2025)/">Paris (2025)/</a> (49 items)</h3>
       </div>
 
       <!-- 7) NYC (2024)/ -->
-      <div class="item" style="top: 1010px; left: 0px">
+      <div class="item it-nyc" style="top: 83px; left: 708px">
         <h3><a href="NYC (2024)/">NYC (2024)/</a> (32 items)</h3>
       </div>
 
       <!-- 8) 94.png -->
-      <div class="item" style="top: 1100px; left: 0px">
+      <div class="item it-94" style="top: 1090px; left: 893px">
         <h3><a href="94.png">94.png</a> (6.66kB)</h3>
         <a href="94.png">
           <img src="94.png" alt="94.png" width="72" height="55">
@@ -229,24 +225,26 @@
       </div>
 
       <!-- 9) 83.png -->
-      <div class="item" style="top: 1220px; left: 0px">
+      <div class="item it-83" style="top: 1099px; left: 4px">
         <h3><a href="83.png">83.png</a> (52.2kB)</h3>
         <a href="83.png">
           <img src="83.png" alt="83.png" width="325" height="99">
         </a>
       </div>
 
-      <!-- keep these if you want -->
-      <div class="item" style="top: 1380px; left: 0px">
+      <!-- kept on both -->
+      <div class="item it-updated" style="top: 1005px; left: 1px">
         <h3>last updated</h3>
         <pre>2025-12-30</pre>
       </div>
 
-      <div class="item" style="top: 1470px; left: 0px">
+      <!-- hidden on mobile -->
+      <div class="item it-src" style="top: 1109px; left: 391px">
         <h3><a href="src/">src/</a> (2 items)</h3>
       </div>
 
-      <div class="item" style="top: 1560px; left: 0px">
+      <!-- hidden on mobile -->
+      <div class="item it-views" style="top: 1109px; left: 565px">
         <h3><a href="views/">views/</a> (2 items)</h3>
       </div>
 
