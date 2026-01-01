@@ -157,25 +157,21 @@
         height:auto;
       }
 
-      /* hide technical folders on mobile */
       .it-src,
       .it-views{
         display:none !important;
       }
 
-      /* carbon badge wrapper appears at the bottom on mobile */
+      /* extra breathing room for carbon badge */
       #wcb-wrap{
         display:block !important;
-        width:100%;
-        max-width:100%;
-        margin:0;
+        margin:96px 0 64px 0; /* ← increased spacing */
       }
 
-      /* keep badge centered inside wrapper */
       #wcb{
         display:flex;
         justify-content:center;
-        margin:0.5em 0;
+        margin:1em 0;
       }
     }
   </style>
@@ -186,7 +182,6 @@
 
     <div class="plantbed" style="left: max(0px, calc(50% - 446.5px - 9em))">
 
-      <!-- 1) fj09304u2.png -->
       <div class="item it-fj" style="top: 90px; left: 0px">
         <h3><a href="fj09304u2.png">fj09304u2.png</a> (136kB)</h3>
         <a href="fj09304u2.png">
@@ -194,12 +189,13 @@
         </a>
       </div>
 
-      <!-- 2) about.md -->
       <div class="item it-about" style="top: 465px; left: 4px">
         <h3><a href="about.md">about.md</a> (311B)</h3>
         <div class="md">
-          <p><a href="https://reidsurmeier.design/">Reid Surmeier</a><br>
-          ⁂ Random photos, essays, links, art etc..</p>
+          <p>
+            <a href="https://reidsurmeier.wtf/">Reid Surmeier</a><br>
+            ⁂ Random photos, essays, links, art etc..
+          </p>
           <p>
             <a href="https://www.are.na/reid-surmeier/channels">&lt;/Are.na&gt;</a><br>
             <a href="https://www.instagram.com/reidsurmeier/">Instagram</a><br>
@@ -209,32 +205,26 @@
         </div>
       </div>
 
-      <!-- 3) Sketchbook -->
       <div class="item it-sketchbook" style="top: 722px; left: 714px">
         <h3><a href="▷Sketchbook/">▷Sketchbook/</a> (9 items)</h3>
       </div>
 
-      <!-- 4) Essays -->
       <div class="item it-essays" style="top: 618px; left: 712px">
         <h3><a href="▷Essays/">▷Essays/</a> (3 items)</h3>
       </div>
 
-      <!-- 5) Painting Selections -->
       <div class="item it-painting" style="top: 532px; left: 711px">
         <h3><a href="▷Painting Selections/">▷Painting Selections/</a> (43 items)</h3>
       </div>
 
-      <!-- 6) Paris -->
       <div class="item it-paris" style="top: 50px; left: 707px">
         <h3><a href="Paris (2025)/">Paris (2025)/</a> (49 items)</h3>
       </div>
 
-      <!-- 7) NYC -->
       <div class="item it-nyc" style="top: 83px; left: 708px">
         <h3><a href="NYC (2024)/">NYC (2024)/</a> (32 items)</h3>
       </div>
 
-      <!-- 8) 94.png -->
       <div class="item it-94" style="top: 1090px; left: 893px">
         <h3><a href="94.png">94.png</a> (6.66kB)</h3>
         <a href="94.png">
@@ -242,7 +232,6 @@
         </a>
       </div>
 
-      <!-- 9) 83.png -->
       <div class="item it-83" style="top: 1099px; left: 4px">
         <h3><a href="83.png">83.png</a> (52.2kB)</h3>
         <a href="83.png">
@@ -250,13 +239,11 @@
         </a>
       </div>
 
-      <!-- last updated -->
       <div class="item it-updated" style="top: 1005px; left: 1px">
         <h3>last updated</h3>
         <pre>2025-12-30</pre>
       </div>
 
-      <!-- desktop only -->
       <div class="item it-src" style="top: 1109px; left: 391px">
         <h3><a href="src/">src/</a> (2 items)</h3>
       </div>
@@ -267,11 +254,9 @@
 
     </div>
 
-    <!-- Mobile-only carbon badge wrapped in dotted container -->
+    <!-- Mobile-only carbon badge, visually wrapped -->
     <div id="wcb-wrap" class="item">
       <h3><a href="https://www.websitecarbon.com/badge/">Website Carbon</a></h3>
-      <!-- Correct usage: DO NOT point data-url to websitecarbon.com; omit to measure this page.
-           If you want to measure a specific page, set data-url to YOUR site URL. -->
       <div id="wcb" class="carbonbadge"></div>
     </div>
 
