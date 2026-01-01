@@ -11,51 +11,121 @@
   <meta name="description" content="file.gallery is a site sown from files and directories.">
 
   <style>
-    html, body {
-      margin: 0;
-      text-size-adjust: none;
-      -webkit-text-size-adjust: 100%;
+    html,
+    body{
+        margin:0;
+        text-size-adjust:none;
+        font-size:14px;
+        font-family:Arial, Helvetica, sans-serif;
+        -webkit-text-size-adjust:100%;
     }
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 14px;
-      overflow-x: scroll;
+
+    body{
+        overflow-x:scroll;
     }
-    main {
-      box-sizing: border-box;
-      padding: 1.5em;
+
+    main{
+        box-sizing:border-box;
+        padding:1.5em;
     }
-    .item {
-      display: inline-block;
-      padding: 0em 1em;
-      margin: 1em 0;
-      border: 1px solid rgba(0,0,0,.1);
+
+    ::selection{
+        background-color:rgba(79, 143, 254, 0.5);
     }
-    .item img, .item video {
-      width: auto; height: auto;
-      max-width: 28em; max-height: 26em;
+
+    .item{
+        display:inline-block;
+        padding:0em 0.25em;
+        margin:0;
+        border:1px dotted rgba(79, 143, 254, 0.5);
     }
-    .item audio {
-      max-width: 18em;
-      height: 3em;
+
+    .item img,
+    .item video{
+        width:auto;
+        height:auto;
+        max-width:28em;
+        max-height:26em;
     }
-    h1, h2, h3, h4, h5, h6 {
-      font-size: 1em;
-      font-weight: normal;
-      color: gray; /* edit me! */
+
+    .item audio{
+        max-width:18em;
+        height:3em;
     }
-    h1, h2, h3, h4, h5, h6, p, ul, ol, li, pre, code {
-      margin: 0;
+
+    .md{
+        max-width:300px;
     }
-    pre {
-      font-family: inherit;
-      white-space: pre-wrap;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .caption{
+        font-size:1em;
+        font-weight:normal;
+        color:rgba(79, 143, 254, 0.5);
+        max-width:26em;
     }
-    a {
-      color: #0000EE; /* edit me! */
+
+    .caption{
+        display:flex;
     }
-    .md h1, .md h2, .md h3, .md h4, .md h5, .md h6, .md p, .md pre {
-      margin-top: 1em;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol,
+    li,
+    pre,
+    code{
+        margin:0;
+    }
+
+    pre{
+        font-family:inherit;
+        white-space:pre-line;
+        max-width:28em;
+    }
+
+    a{
+        color:rgb(84, 136, 226);
+    }
+
+    a:hover{
+        color:rgb(127, 174, 255);
+    }
+
+    .md h1,
+    .md h2,
+    .md h3,
+    .md h4,
+    .md h5,
+    .md h6,
+    .md p,
+    .md pre{
+        margin-top:1em;
+    }
+
+    #back{
+        position:fixed;
+        top:1em;
+        left:1.5em;
+        padding:0em 0.25em;
+        margin:1em 0;
+        background-color:white;
+        z-index:999;
+    }
+
+    .breadcrumb-line{
+        white-space:nowrap;
     }
   </style>
 </head>
